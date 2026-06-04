@@ -1,0 +1,32 @@
+name: Birthday Wisher
+
+on:
+  schedule:
+    # Daily 8:30 AM IST
+    - cron: '0 3 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  send-birthday-mails:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: |
+          pip install pandas
+
+      - name: Run Birthday Wisher
+        env:
+          MY_EMAIL: ${{ secrets.MY_EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+        run: |
+          python main.py

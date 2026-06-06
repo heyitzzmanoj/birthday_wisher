@@ -2,9 +2,7 @@ name: Birthday Wisher
 
 on:
   schedule:
-    # Daily 8:30 AM IST
-    - cron: '0 3 * * *'
-
+    - cron: '24 7 * * *'
   workflow_dispatch:
 
 jobs:

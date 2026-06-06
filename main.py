@@ -4,7 +4,7 @@ import random
 import pandas
 def send_mail(a,g_mail,message):
     my_email = "sutharm965.com@gmail.com"
-    password = "hcccpzomltmwxqfq"
+    password ="oythaqgpmclgiohm"
     
     connection = smtplib.SMTP("smtp.gmail.com",587)
     connection.starttls()

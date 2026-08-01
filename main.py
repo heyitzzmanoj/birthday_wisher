@@ -28,7 +28,7 @@ bd_list = bd.date.to_list()
 if dates in bd_list:
     d = bd[bd.date==dates] 
     email=d.email
-    name = d.name
+    name = d.name.item()
     with open("massage.txt") as f:
         d= f.read()
         data=d.replace("name",name)
